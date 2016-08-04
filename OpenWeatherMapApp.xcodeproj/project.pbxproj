@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		59AB5FB81D53A0BF004E618C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AB5FB71D53A0BF004E618C /* AppDelegate.swift */; };
+		59AB5FBA1D53A0BF004E618C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AB5FB91D53A0BF004E618C /* ViewController.swift */; };
+		59AB5FBD1D53A0BF004E618C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59AB5FBB1D53A0BF004E618C /* Main.storyboard */; };
+		59AB5FBF1D53A0BF004E618C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59AB5FBE1D53A0BF004E618C /* Assets.xcassets */; };
+		59AB5FC21D53A0BF004E618C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59AB5FC01D53A0BF004E618C /* LaunchScreen.storyboard */; };
+		59AB5FCD1D53A0BF004E618C /* OpenWeatherMapAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AB5FCC1D53A0BF004E618C /* OpenWeatherMapAppTests.swift */; };
+		59AB5FD81D53A0BF004E618C /* OpenWeatherMapAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AB5FD71D53A0BF004E618C /* OpenWeatherMapAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		59AB5FC91D53A0BF004E618C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59AB5FAC1D53A0BF004E618C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59AB5FB31D53A0BF004E618C;
+			remoteInfo = OpenWeatherMapApp;
+		};
+		59AB5FD41D53A0BF004E618C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 59AB5FAC1D53A0BF004E618C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 59AB5FB31D53A0BF004E618C;
+			remoteInfo = OpenWeatherMapApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		59AB5FB41D53A0BF004E618C /* OpenWeatherMapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenWeatherMapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		59AB5FB71D53A0BF004E618C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		59AB5FB91D53A0BF004E618C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		59AB5FBC1D53A0BF004E618C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		59AB5FBE1D53A0BF004E618C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		59AB5FC11D53A0BF004E618C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		59AB5FC31D53A0BF004E618C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59AB5FC81D53A0BF004E618C /* OpenWeatherMapAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWeatherMapAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59AB5FCC1D53A0BF004E618C /* OpenWeatherMapAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapAppTests.swift; sourceTree = "<group>"; };
+		59AB5FCE1D53A0BF004E618C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		59AB5FD31D53A0BF004E618C /* OpenWeatherMapAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWeatherMapAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		59AB5FD71D53A0BF004E618C /* OpenWeatherMapAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherMapAppUITests.swift; sourceTree = "<group>"; };
+		59AB5FD91D53A0BF004E618C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		59AB5FB11D53A0BF004E618C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59AB5FC51D53A0BF004E618C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59AB5FD01D53A0BF004E618C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59AB5FAB1D53A0BF004E618C = {
+			isa = PBXGroup;
+			children = (
+				59AB5FB61D53A0BF004E618C /* OpenWeatherMapApp */,
+				59AB5FCB1D53A0BF004E618C /* OpenWeatherMapAppTests */,
+				59AB5FD61D53A0BF004E618C /* OpenWeatherMapAppUITests */,
+				59AB5FB51D53A0BF004E618C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		59AB5FB51D53A0BF004E618C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				59AB5FB41D53A0BF004E618C /* OpenWeatherMapApp.app */,
+				59AB5FC81D53A0BF004E618C /* OpenWeatherMapAppTests.xctest */,
+				59AB5FD31D53A0BF004E618C /* OpenWeatherMapAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		59AB5FB61D53A0BF004E618C /* OpenWeatherMapApp */ = {
+			isa = PBXGroup;
+			children = (
+				59AB5FB71D53A0BF004E618C /* AppDelegate.swift */,
+				59AB5FB91D53A0BF004E618C /* ViewController.swift */,
+				59AB5FBB1D53A0BF004E618C /* Main.storyboard */,
+				59AB5FBE1D53A0BF004E618C /* Assets.xcassets */,
+				59AB5FC01D53A0BF004E618C /* LaunchScreen.storyboard */,
+				59AB5FC31D53A0BF004E618C /* Info.plist */,
+			);
+			path = OpenWeatherMapApp;
+			sourceTree = "<group>";
+		};
+		59AB5FCB1D53A0BF004E618C /* OpenWeatherMapAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				59AB5FCC1D53A0BF004E618C /* OpenWeatherMapAppTests.swift */,
+				59AB5FCE1D53A0BF004E618C /* Info.plist */,
+			);
+			path = OpenWeatherMapAppTests;
+			sourceTree = "<group>";
+		};
+		59AB5FD61D53A0BF004E618C /* OpenWeatherMapAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				59AB5FD71D53A0BF004E618C /* OpenWeatherMapAppUITests.swift */,
+				59AB5FD91D53A0BF004E618C /* Info.plist */,
+			);
+			path = OpenWeatherMapAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		59AB5FB31D53A0BF004E618C /* OpenWeatherMapApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59AB5FDC1D53A0BF004E618C /* Build configuration list for PBXNativeTarget "OpenWeatherMapApp" */;
+			buildPhases = (
+				59AB5FB01D53A0BF004E618C /* Sources */,
+				59AB5FB11D53A0BF004E618C /* Frameworks */,
+				59AB5FB21D53A0BF004E618C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenWeatherMapApp;
+			productName = OpenWeatherMapApp;
+			productReference = 59AB5FB41D53A0BF004E618C /* OpenWeatherMapApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		59AB5FC71D53A0BF004E618C /* OpenWeatherMapAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59AB5FDF1D53A0BF004E618C /* Build configuration list for PBXNativeTarget "OpenWeatherMapAppTests" */;
+			buildPhases = (
+				59AB5FC41D53A0BF004E618C /* Sources */,
+				59AB5FC51D53A0BF004E618C /* Frameworks */,
+				59AB5FC61D53A0BF004E618C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59AB5FCA1D53A0BF004E618C /* PBXTargetDependency */,
+			);
+			name = OpenWeatherMapAppTests;
+			productName = OpenWeatherMapAppTests;
+			productReference = 59AB5FC81D53A0BF004E618C /* OpenWeatherMapAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		59AB5FD21D53A0BF004E618C /* OpenWeatherMapAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 59AB5FE21D53A0BF004E618C /* Build configuration list for PBXNativeTarget "OpenWeatherMapAppUITests" */;
+			buildPhases = (
+				59AB5FCF1D53A0BF004E618C /* Sources */,
+				59AB5FD01D53A0BF004E618C /* Frameworks */,
+				59AB5FD11D53A0BF004E618C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				59AB5FD51D53A0BF004E618C /* PBXTargetDependency */,
+			);
+			name = OpenWeatherMapAppUITests;
+			productName = OpenWeatherMapAppUITests;
+			productReference = 59AB5FD31D53A0BF004E618C /* OpenWeatherMapAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		59AB5FAC1D53A0BF004E618C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Phyo Pwint Thu";
+				TargetAttributes = {
+					59AB5FB31D53A0BF004E618C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					59AB5FC71D53A0BF004E618C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 59AB5FB31D53A0BF004E618C;
+					};
+					59AB5FD21D53A0BF004E618C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 59AB5FB31D53A0BF004E618C;
+					};
+				};
+			};
+			buildConfigurationList = 59AB5FAF1D53A0BF004E618C /* Build configuration list for PBXProject "OpenWeatherMapApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 59AB5FAB1D53A0BF004E618C;
+			productRefGroup = 59AB5FB51D53A0BF004E618C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				59AB5FB31D53A0BF004E618C /* OpenWeatherMapApp */,
+				59AB5FC71D53A0BF004E618C /* OpenWeatherMapAppTests */,
+				59AB5FD21D53A0BF004E618C /* OpenWeatherMapAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		59AB5FB21D53A0BF004E618C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59AB5FC21D53A0BF004E618C /* LaunchScreen.storyboard in Resources */,
+				59AB5FBF1D53A0BF004E618C /* Assets.xcassets in Resources */,
+				59AB5FBD1D53A0BF004E618C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59AB5FC61D53A0BF004E618C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59AB5FD11D53A0BF004E618C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		59AB5FB01D53A0BF004E618C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59AB5FBA1D53A0BF004E618C /* ViewController.swift in Sources */,
+				59AB5FB81D53A0BF004E618C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59AB5FC41D53A0BF004E618C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59AB5FCD1D53A0BF004E618C /* OpenWeatherMapAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59AB5FCF1D53A0BF004E618C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59AB5FD81D53A0BF004E618C /* OpenWeatherMapAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		59AB5FCA1D53A0BF004E618C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59AB5FB31D53A0BF004E618C /* OpenWeatherMapApp */;
+			targetProxy = 59AB5FC91D53A0BF004E618C /* PBXContainerItemProxy */;
+		};
+		59AB5FD51D53A0BF004E618C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 59AB5FB31D53A0BF004E618C /* OpenWeatherMapApp */;
+			targetProxy = 59AB5FD41D53A0BF004E618C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		59AB5FBB1D53A0BF004E618C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59AB5FBC1D53A0BF004E618C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		59AB5FC01D53A0BF004E618C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59AB5FC11D53A0BF004E618C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		59AB5FDA1D53A0BF004E618C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		59AB5FDB1D53A0BF004E618C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		59AB5FDD1D53A0BF004E618C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenWeatherMapApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ppt.OpenWeatherMapApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		59AB5FDE1D53A0BF004E618C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = OpenWeatherMapApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ppt.OpenWeatherMapApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		59AB5FE01D53A0BF004E618C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OpenWeatherMapAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ppt.OpenWeatherMapAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenWeatherMapApp.app/OpenWeatherMapApp";
+			};
+			name = Debug;
+		};
+		59AB5FE11D53A0BF004E618C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = OpenWeatherMapAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ppt.OpenWeatherMapAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OpenWeatherMapApp.app/OpenWeatherMapApp";
+			};
+			name = Release;
+		};
+		59AB5FE31D53A0BF004E618C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OpenWeatherMapAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ppt.OpenWeatherMapAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OpenWeatherMapApp;
+			};
+			name = Debug;
+		};
+		59AB5FE41D53A0BF004E618C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = OpenWeatherMapAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ppt.OpenWeatherMapAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = OpenWeatherMapApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59AB5FAF1D53A0BF004E618C /* Build configuration list for PBXProject "OpenWeatherMapApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59AB5FDA1D53A0BF004E618C /* Debug */,
+				59AB5FDB1D53A0BF004E618C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		59AB5FDC1D53A0BF004E618C /* Build configuration list for PBXNativeTarget "OpenWeatherMapApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59AB5FDD1D53A0BF004E618C /* Debug */,
+				59AB5FDE1D53A0BF004E618C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		59AB5FDF1D53A0BF004E618C /* Build configuration list for PBXNativeTarget "OpenWeatherMapAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59AB5FE01D53A0BF004E618C /* Debug */,
+				59AB5FE11D53A0BF004E618C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		59AB5FE21D53A0BF004E618C /* Build configuration list for PBXNativeTarget "OpenWeatherMapAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59AB5FE31D53A0BF004E618C /* Debug */,
+				59AB5FE41D53A0BF004E618C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 59AB5FAC1D53A0BF004E618C /* Project object */;
+}
