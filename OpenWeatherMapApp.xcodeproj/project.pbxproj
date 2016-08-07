@@ -87,6 +87,7 @@
 		59AB5FAB1D53A0BF004E618C = {
 			isa = PBXGroup;
 			children = (
+				59AB5FF71D57A432004E618C /* New Group */,
 				59AB5FB61D53A0BF004E618C /* OpenWeatherMapApp */,
 				59AB5FCB1D53A0BF004E618C /* OpenWeatherMapAppTests */,
 				59AB5FD61D53A0BF004E618C /* OpenWeatherMapAppUITests */,
@@ -107,6 +108,9 @@
 		59AB5FB61D53A0BF004E618C /* OpenWeatherMapApp */ = {
 			isa = PBXGroup;
 			children = (
+				59AB5FF61D57A422004E618C /* New Group2 */,
+				59AB5FF51D57A3FD004E618C /* New Group1 */,
+				59AB5FF41D57A3F5004E618C /* New Group */,
 				59AB5FF31D563C49004E618C /* cloudImages */,
 				59AB5FB71D53A0BF004E618C /* AppDelegate.swift */,
 				59AB5FB91D53A0BF004E618C /* ViewController.swift */,
@@ -154,6 +158,34 @@
 				59AB5FF01D563C2D004E618C /* cloud.png */,
 			);
 			name = cloudImages;
+			sourceTree = "<group>";
+		};
+		59AB5FF41D57A3F5004E618C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		59AB5FF51D57A3FD004E618C /* New Group1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group1";
+			sourceTree = "<group>";
+		};
+		59AB5FF61D57A422004E618C /* New Group2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group2";
+			sourceTree = "<group>";
+		};
+		59AB5FF71D57A432004E618C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,6 +467,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = OpenWeatherMapApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ppt.OpenWeatherMapApp;
@@ -447,6 +480,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = OpenWeatherMapApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ppt.OpenWeatherMapApp;

@@ -8,7 +8,6 @@
 
 import Foundation
 class WeatherForecastinfo {
-    
     var humid: String!
     var temp: String!
     var date: String!
