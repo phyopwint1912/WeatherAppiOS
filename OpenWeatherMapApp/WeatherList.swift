@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class WeatherList {
+    private let date: String! = nil
+    private let mainForecasts: AnyObject = MainForecastinfo()
+    private let weatherForecasts: NSArray = [WeatherForecastinfo]()
+}

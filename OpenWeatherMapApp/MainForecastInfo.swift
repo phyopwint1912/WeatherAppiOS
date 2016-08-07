@@ -7,3 +7,17 @@
 //
 
 import Foundation
+
+class MainForecastinfo {
+    
+    var temp_kf: Float!
+    var temp: Float!
+    var grnd_level: Float!
+    var temp_max: Float!
+    var sea_level: Float!
+    var humidity: Int!
+    var pressure: Float!
+    var temp_min: Float!
+    
+    
+}

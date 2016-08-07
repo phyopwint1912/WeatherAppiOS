@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "59AB5FB31D53A0BF004E618C"
+               BuildableName = "OpenWeatherMapApp.app"
+               BlueprintName = "OpenWeatherMapApp"
+               ReferencedContainer = "container:OpenWeatherMapApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "59AB5FC71D53A0BF004E618C"
+               BuildableName = "OpenWeatherMapAppTests.xctest"
+               BlueprintName = "OpenWeatherMapAppTests"
+               ReferencedContainer = "container:OpenWeatherMapApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "59AB5FD21D53A0BF004E618C"
+               BuildableName = "OpenWeatherMapAppUITests.xctest"
+               BlueprintName = "OpenWeatherMapAppUITests"
+               ReferencedContainer = "container:OpenWeatherMapApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "59AB5FB31D53A0BF004E618C"
+            BuildableName = "OpenWeatherMapApp.app"
+            BlueprintName = "OpenWeatherMapApp"
+            ReferencedContainer = "container:OpenWeatherMapApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "59AB5FB31D53A0BF004E618C"
+            BuildableName = "OpenWeatherMapApp.app"
+            BlueprintName = "OpenWeatherMapApp"
+            ReferencedContainer = "container:OpenWeatherMapApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "59AB5FB31D53A0BF004E618C"
+            BuildableName = "OpenWeatherMapApp.app"
+            BlueprintName = "OpenWeatherMapApp"
+            ReferencedContainer = "container:OpenWeatherMapApp.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
