@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var placeLabel: UILabel!
     
     let CellIdentifier = "Cell"
-    var locationMgr = CLLocationManager()
+    
     
     // Variables for Model
     private var dt: Double!
@@ -46,30 +46,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private var longitude: String!
     private var weatherArray = [WeatherForecastinfo]()
     
+    let locationManager = CLLocationManager()
+    
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         //Setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpg")!)
-        
-        
-        getForecateByCity("Singapore")
         self.tableView.delegate = self
         self.tableView.dataSource = self
         //Location Manager for GPS location
-        locationMgr.delegate = self
-        locationMgr.requestWhenInUseAuthorization()
         
-        if (CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedWhenInUse ||
-            CLLocationManager.authorizationStatus() == CLAuthorizationStatus.AuthorizedAlways)
-        {
-            print(locationMgr.location)
-            latitude = String(locationMgr.location!.coordinate.latitude)
-            longitude = String(locationMgr.location!.coordinate.longitude)
-            print("Lat", latitude)
-            print("Long", longitude)
-        }
-        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
     }
     
     
@@ -78,6 +69,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: - CoreLocation Delegate
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        print("Manager",manager.location)
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+        getForecastByLocation(String(locValue.latitude),lon: String(locValue.longitude))
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
+
+    }
     
     // MARK: - TableView Implementation
     
@@ -86,7 +85,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print("self.weatherArray.count", self.weatherArray.count)
         return self.weatherArray.count
     }
     
@@ -105,7 +103,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath){
-        print("indexPath",indexPath.row)
         showUIViewData(indexPath.row)
     }
     
@@ -139,7 +136,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         windLabel.text = dataRow.winds
         cloudLabel.text = dataRow.cloudStatus
         placeLabel.text = cityName
-        print("dataRow.imageName",dataRow.imageName)
         let image = UIImage(named: "\(dataRow.imageName).png")
         cloudImage.image = image
         let status = dataRow.cloudStatus
@@ -149,10 +145,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
     
-    private func getForecateByCity(city: String) {
-        let lat = "1.3421724"
-        let lon = "103.7178868"
-        let weatherRequestURL = NSURL(string: "\(openWeatherMapBaseURL)?APPID=\(openWeatherMapAPIKey)&lat=\(lat)&lon=\(lon)")!
+    private func getForecastByLocation(lat: String, lon: String) {
+        let weatherRequestURL = NSURL(string: "\(openWeatherMapBaseURL)?APPID=\(openWeatherMapAPIKey)&lat=\(!lat.isEmpty ? lat :"1.3421724")&lon=\(!lon.isEmpty ? lon :"103.7178868")")!
         print(weatherRequestURL)
         getForecast(weatherRequestURL)
     }
