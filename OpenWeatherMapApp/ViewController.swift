@@ -46,23 +46,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private var longitude: String!
     private var weatherArray = [WeatherForecastinfo]()
     
-    let locationManager = CLLocationManager()
+    //MARK: - Var for Location
+
+    var locationManager : CLLocationManager!
+    var seenError : Bool = false
+    var locationFixAchieved : Bool = false
+    var locationStatus : NSString = "Not Started"
     
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         //Setting the background
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpg")!)
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.tableView.addTopBorderWithColor(UIColor.grayColor(), width: 2.0)
         self.tableView.delegate = self
         self.tableView.dataSource = self
         //Location Manager for GPS location
-        
+        seenError = false
+        locationFixAchieved = false
+        locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
+
     }
-    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -70,11 +79,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //MARK: - CoreLocation Delegate
+   
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        locationManager.stopUpdatingLocation()
+        if (error != "") {
+            if (seenError == false) {
+                seenError = true
+                print(error)
+            }
+        }
+    }
+    
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         print("Manager",manager.location)
-        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        getForecastByLocation(String(locValue.latitude),lon: String(locValue.longitude))
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        var shouldIAllow = false
+        
+        switch status {
+        case CLAuthorizationStatus.Restricted:
+            locationStatus = "Restricted Access to location"
+        case CLAuthorizationStatus.Denied:
+            locationStatus = "User denied access to location"
+        case CLAuthorizationStatus.NotDetermined:
+            locationStatus = "Status not determined"
+        default:
+            locationStatus = "Allowed to location Access"
+            shouldIAllow = true
+        }
+        NSNotificationCenter.defaultCenter().postNotificationName("LabelHasbeenUpdated", object: nil)
+        if (shouldIAllow == true) {
+            NSLog("Location to Allowed")
+            // Start location services
+            locationManager.startUpdatingLocation()
+            let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+            getForecastByLocation(String(locValue.latitude),lon: String(locValue.longitude))
+        } else {
+            NSLog("Denied access: \(locationStatus)")
+        }
+        
+//       
+//        print("locations = \(locValue.latitude) \(locValue.longitude)")
 
     }
     
@@ -91,14 +134,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier, forIndexPath: indexPath) as! customTableViewCell
         let dataRow = self.weatherArray[indexPath.row]
-        //print("dataRow", dataRow.cloudStatus)
         let image = UIImage(named: "ic_\(dataRow.imageName).png")
         cell.cloudImg.image = image
         cell.dayLabel.text = getDayOfWeek(dataRow.date)
-        cell.tempLabel.text = dataRow.temp
-        
-        let firstIndexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.selectRowAtIndexPath(firstIndexPath, animated: true, scrollPosition: .Middle)
+        cell.tempLabel.text = dataRow.temp + "°C"
         showUIViewData(0)
         return cell
     }
@@ -132,16 +171,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let dataRow = self.weatherArray[row]
         dateLabel.text =  dataRow.date
         humidLabel.text = dataRow.humid
-        tempLabel.text = dataRow.temp
+        tempLabel.text = dataRow.temp + "°C"
         windLabel.text = dataRow.winds
         cloudLabel.text = dataRow.cloudStatus
         placeLabel.text = cityName
         let image = UIImage(named: "\(dataRow.imageName).png")
         cloudImage.image = image
-        let status = dataRow.cloudStatus
-        if(status == "fair cloud") {
-            self.detailUIView.backgroundColor = UIColor.redColor()
-        }
         
     }
     
@@ -189,7 +224,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         for item in weather["list"] as! NSArray {
             humid = String(item["humidity"] as! Double)
             let tempF = item["temp"]!!["day"] as! Double
-            temp = String((tempF - 273.15))
+            let tempIntDouble = tempF - 273.15
+            temp = String(tempIntDouble.toInt()! as Int)
             dt = item["dt"] as? Double
             let dateChangeArr = String(NSDate(timeIntervalSince1970: dt! * 1000 / 1000)).characters.split{$0 == " "}.map(String.init)
             date = dateChangeArr[0]
@@ -217,17 +253,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 }
-//extension UIImageView{
-//
-//    func makeBlurImage(targetImageView:UIImageView?)
-//    {
-//        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
-//        blurEffectView.frame = targetImageView!.bounds
-//
-//        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-//        targetImageView?.addSubview(blurEffectView)
-//    }
-//    
-//}
+
+extension Double {
+    func toInt() -> Int? {
+        if self > Double(Int.min) && self < Double(Int.max) {
+            return Int(self)
+        } else {
+            return nil
+        }
+    }
+}
+extension UITableView {
+    func addTopBorderWithColor(color: UIColor, width: CGFloat) {
+        let border = CALayer()
+        border.backgroundColor = color.CGColor
+        //use for border bottom
+        //border.frame = CGRectMake(0, self.frame.size.height - width, self.frame.size.width, width)
+         border.frame = CGRectMake(0.0, 0.0, self.frame.size.width, 1.5)
+        self.layer.addSublayer(border)
+    }
+}
+
 

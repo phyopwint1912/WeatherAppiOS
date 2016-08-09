@@ -31,11 +31,11 @@
 	<string>Main</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>"Get The Location"</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>"Your message goes here"</string>
-    <key>UIRequiredDeviceCapabilities</key>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>&quot;Need to access your location&quot;</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>&quot;Need to access your location&quot;</string>
+	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
 	</array>
