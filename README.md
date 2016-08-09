@@ -1,10 +1,10 @@
 # WeatherAppiOS
  
-![alt text](imglink "")
+![alt text](https://github.com/phyopwint1912/WeatherAppiOS/blob/master/Icon-App-76x76%403x.png "")
 
-##A iOS Weather Apps which allows you to retrive the location and show the 7days weather forecast.
+##A iOS Weather Apps which retrives the your current location and show the 7days weather forecast.
 
-![alt text](imglink "")
+![alt text](https://github.com/phyopwint1912/WeatherAppiOS/blob/master/Simulator%20Screen%20Shot%20Aug%209%2C%202016%2C%207.21.46%20PM.png "")
 
 
 ## Contributing
