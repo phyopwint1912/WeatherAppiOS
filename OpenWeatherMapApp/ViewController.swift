@@ -47,11 +47,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     private var weatherArray = [WeatherForecastinfo]()
     
     //MARK: - Var for Location
-
+    
     var locationManager : CLLocationManager!
     var seenError : Bool = false
     var locationFixAchieved : Bool = false
     var locationStatus: String!
+    var latitudeactual:Double = 0
+    var longitudeactual:Double = 0
     
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -70,8 +72,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -79,7 +82,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     //MARK: - CoreLocation Delegate
-   
+    
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         locationManager.stopUpdatingLocation()
         if (error != "") {
@@ -90,8 +93,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        locationManager.startUpdatingLocation()
+        if(manager.location != nil) {
+            let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+            latitudeactual = locValue.latitude
+            longitudeactual = locValue.longitude
+        }
+        locationManager.stopUpdatingLocation()
+        getForecastByLocation(String(latitudeactual),lon: String(longitudeactual))
+    }
+    
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-
+        
         var shouldIAllow = false
         switch status {
         case CLAuthorizationStatus.Authorized:
@@ -103,15 +117,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             shouldIAllow = true
         }
         if (shouldIAllow == true) {
-            NSLog("Location to Allowed")
             // Start location services
             locationManager.startUpdatingLocation()
-            let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-            getForecastByLocation(String(locValue.latitude),lon: String(locValue.longitude))
+            if(manager.location != nil) {
+                let locValue:CLLocationCoordinate2D = manager.location!.coordinate
+                latitudeactual = locValue.latitude
+                longitudeactual = locValue.longitude
+            }
+            locationManager.stopUpdatingLocation()
+            getForecastByLocation(String(latitudeactual),lon: String(longitudeactual))
+            
         } else {
-            NSLog("Denied access: \(locationStatus)")
+            NSLog("Denied access")
         }
-
+        
     }
     
     // MARK: - TableView Implementation
@@ -213,7 +232,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     private func parseJsonData(weather: NSDictionary) {
         cityName = weather["city"]!["name"] as! String
-
+        
         for item in weather["list"] as! NSArray {
             humid = String(item["humidity"] as! Double)
             let tempF = item["temp"]!!["day"] as! Double
@@ -260,9 +279,7 @@ extension UITableView {
     func addTopBorderWithColor(color: UIColor, width: CGFloat) {
         let border = CALayer()
         border.backgroundColor = color.CGColor
-        //use for border bottom
-        //border.frame = CGRectMake(0, self.frame.size.height - width, self.frame.size.width, width)
-         border.frame = CGRectMake(0.0, 0.0, self.frame.size.width, 1.5)
+        border.frame = CGRectMake(0.0, 0.0, self.frame.size.width, 1.5)
         self.layer.addSublayer(border)
     }
 }
