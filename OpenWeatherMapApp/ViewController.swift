@@ -51,7 +51,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var locationManager : CLLocationManager!
     var seenError : Bool = false
     var locationFixAchieved : Bool = false
-    var locationStatus : NSString = "Not Started"
+    var locationStatus: String!
     
     // MARK: - Override Methods
     override func viewDidLoad() {
@@ -62,6 +62,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.tableView.addTopBorderWithColor(UIColor.grayColor(), width: 2.0)
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.detailUIView.hidden = true
         //Location Manager for GPS location
         seenError = false
         locationFixAchieved = false
@@ -69,7 +70,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
-
     }
 
     
@@ -91,21 +91,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("Manager",manager.location)
+
         var shouldIAllow = false
-        
         switch status {
-        case CLAuthorizationStatus.Restricted:
-            locationStatus = "Restricted Access to location"
+        case CLAuthorizationStatus.Authorized:
+            shouldIAllow = true
         case CLAuthorizationStatus.Denied:
-            locationStatus = "User denied access to location"
-        case CLAuthorizationStatus.NotDetermined:
-            locationStatus = "Status not determined"
+            locationStatus = "You denied to access the location. Please go to settings and open the privacy. Thank you"
+            self.printMessage(locationStatus as String)
         default:
-            locationStatus = "Allowed to location Access"
             shouldIAllow = true
         }
-        NSNotificationCenter.defaultCenter().postNotificationName("LabelHasbeenUpdated", object: nil)
         if (shouldIAllow == true) {
             NSLog("Location to Allowed")
             // Start location services
@@ -115,9 +111,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             NSLog("Denied access: \(locationStatus)")
         }
-        
-//       
-//        print("locations = \(locValue.latitude) \(locValue.longitude)")
 
     }
     
@@ -168,6 +161,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - Utils
     private func showUIViewData(row: Int) {
+        self.detailUIView.hidden = false
         let dataRow = self.weatherArray[row]
         dateLabel.text =  dataRow.date
         humidLabel.text = dataRow.humid
@@ -218,9 +212,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     private func parseJsonData(weather: NSDictionary) {
-        //print("container", weather)
         cityName = weather["city"]!["name"] as! String
-        //print("WeatherCity",cityName)
+
         for item in weather["list"] as! NSArray {
             humid = String(item["humidity"] as! Double)
             let tempF = item["temp"]!!["day"] as! Double
