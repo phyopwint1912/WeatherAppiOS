@@ -1,11 +1,11 @@
 # WeatherAppiOS
  
-![alt text](https://github.com/phyopwint1912/WeatherAppiOS/blob/master/Icon-App-76x76%403x.png "")
+<img src="https://github.com/phyopwint1912/WeatherAppiOS/blob/master/Icon-App-76x76%403x.png" width="100" height="100"/>
+
 
 ##A iOS Weather Apps which retrives your current location and show the 7days weather forecast.
 
-![alt text](https://github.com/phyopwint1912/WeatherAppiOS/blob/master/Simulator%20Screen%20Shot%20Aug%209%2C%202016%2C%207.21.46%20PM.png "")
-
+<img src="https://github.com/phyopwint1912/WeatherAppiOS/blob/master/Simulator%20Screen%20Shot%20Aug%209%2C%202016%2C%207.21.46%20PM.png" width="245" height="440"/>
 
 ## Contributing
  1. Fork it
